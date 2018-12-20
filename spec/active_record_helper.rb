@@ -3,6 +3,7 @@ require 'database_cleaner'
 require 'yaml'
 
 dbconfig = YAML::load(IO.read(File.join(File.dirname(__FILE__), 'database.yml')))
+Rails.logger = Logger.new(File.join(File.dirname(__FILE__), "debug.log"))
 ActiveRecord::Base.logger = Logger.new(File.join(File.dirname(__FILE__), "debug.log"))
 ActiveRecord::Base.establish_connection(dbconfig[ENV['DB'] || 'sqlite'])
 

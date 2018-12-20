@@ -7,6 +7,10 @@ require "acts_as_tenant/errors"
 require "acts_as_tenant/configuration"
 require "acts_as_tenant/controller_extensions"
 require "acts_as_tenant/model_extensions"
+if defined?(Rails::Railtie)
+  require "acts_as_tenant/middleware"
+  require "acts_as_tenant/railtie"
+end
 
 #$LOAD_PATH.shift
 
@@ -24,4 +28,3 @@ end
 
 module ActsAsTenant
 end
-  
