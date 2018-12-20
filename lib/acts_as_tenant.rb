@@ -24,4 +24,3 @@ end
 
 module ActsAsTenant
 end
-  
